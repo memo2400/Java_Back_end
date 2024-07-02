@@ -11,6 +11,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hola.apirest.apirest.Entities.Producto;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+
 
 /*
  * Pondremos tosas las direcciones
@@ -35,10 +41,37 @@ import com.hola.apirest.apirest.Entities.Producto;
     // List sale de java.util
     @GetMapping
     public List<Producto> getAllProducts(){
-        return
+        return productoRepository.findAll();
     }
 
+    /*
+     * GUARDADO
+     * 
+     * El request significa que el cliente pedira datos a la BD
+     * de nuestra classe producto de carpeta entities, cargaremos 
+     * p brindaremos todos los aprametros necesarios exepto el ID
+     * Guardaremos todo aqui
+     */
+    @PostMapping
+    public Producto crearProducto(@RequestBody Producto producto) {
+        //TODO: process POST request
+        // guardamos el producto que recibimos en el parametro
+        
+        return productoRepository.save(producto);
+    }
+    
+    /*
+     * ACTUALIZACION
+     * 
+     * 
+     */
 
+     @PutMapping
+     public Producto updateProducto(@PathVariable String id, @RequestBody String entity) {
+         //TODO: process PUT request
+         
+         return entity;
+     }
 }
 
 
