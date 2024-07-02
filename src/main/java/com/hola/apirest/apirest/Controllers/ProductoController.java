@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hola.apirest.apirest.Repositories.Producto_Repository;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -45,6 +47,18 @@ import org.springframework.web.bind.annotation.PathVariable;
     }
 
     /*
+     * Recibimos un ID
+     * Si no encuentra nada hacemos un error
+     * Si si lo encuientra lo modificamos
+     */
+    @GetMapping("/{id}")
+    public Producto obtenerProductoPorID(@PathVariable Long id, @RequestBody Producto detallesProducto){
+        return productoRepository.findById(id)
+        .orElseThrow(() -> new RuntimeException ("No encontramos el prducto de ID " + id));
+        
+    }
+
+    /*
      * GUARDADO
      * 
      * El request significa que el cliente pedira datos a la BD
@@ -63,16 +77,43 @@ import org.springframework.web.bind.annotation.PathVariable;
     /*
      * ACTUALIZACION
      * 
+     * Si no encuentra nada hacemos un error
+     * Si si lo encuientra lo modificamos
      * 
+     * Se crea una variable nueva
+     * se modifica el precio y nombre por los prametros que llegan
+     * guarda al final la variable en nuestro repositorio BD
      */
 
-     @PutMapping
-     public Producto updateProducto(@PathVariable String id, @RequestBody String entity) {
+     @PutMapping("/{id}")
+     public Producto updateProducto(@PathVariable Long id, @RequestBody Producto detallesProducto) {
          //TODO: process PUT request
          
-         return entity;
+         Producto productoo = productoRepository.findById(id)
+        .orElseThrow(() -> new RuntimeException ("No encontramos el prducto de ID " + id));
+         
+        productoo.setNombre(detallesProducto.getNombre());
+        productoo.setPrecio(detallesProducto.getPrecio());
+
+        return productoRepository.save(productoo);
      }
+
+     /*
+      * Se suele retornar el procuto eliminado, pero esta vez
+      regresaremos una frase
+      */
+    
+    @DeleteMapping ("/{id}")
+    public String borrarProducto (@PathVariable Long id){
+        Producto productoABorrar = productoRepository.findById(id)
+        .orElseThrow(() -> new RuntimeException("no se pudo borrar massivamente el producto " + id)); 
+
+        productoRepository.delete(productoABorrar);
+        return "se borro el producto " + id + "FHD";
+
+    }
 }
+
 
 
 /*
