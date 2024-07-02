@@ -1,0 +1,47 @@
+aplication.propeties
+
+// aqui vamos a setear cosas para mapeada con BD
+vamos a autogenerar la BD
+spring.jpa.hibernate.ddl-auto=update
+
+el puerto
+server.port=8080
+
+es opcional para que no se buguee, 
+spring.config.import=optional:file:.env[.properties]
+
+// esto se usa asi para que no quede vulnerable las pass y user, 
+// para eso es el entorno virtual
+spring.datasource.url= ${SPRING_DATASOURCE_URL}
+
+
+########################################################################
+.ENV
+
+jdbc = es lo que nosotros usamso para hacer la conexion, es un libreria
+
+el puesto defaul
+localhost:5432
+
+
+.env.template
+sirve de ejemplo para que otra persona lo vea publico
+
+############################
+
+hatsa aqui ya todo sirve, ahora necesitamos de docker para quese pueda consumir una _BD
+
+
+
+
+###############
+// 06:40:14
+
+// 06 : 47 : 00
+
+// 06:51 :30
+
+
+// 06:58:24
+
+//07:04:23
