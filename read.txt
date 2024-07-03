@@ -31,8 +31,39 @@ sirve de ejemplo para que otra persona lo vea publico
 
 hatsa aqui ya todo sirve, ahora necesitamos de docker para quese pueda consumir una _BD
 
+alt + shift flecha = para seleeciona varias lineas de codigo
+
+con alt = seleciono varioa renglones, y pego todos multiples
+
+abrimos Duker y la terminal 
+    escribo: docker-compose up -d
+    hubo un error porque tenia enviroment mal escrito
+    con eso vamos a ducker y ya esta jalando al 100%
+
+############################
+
+docker
+
+sirve para hacr imagenes de BD de SQL que funcionen en cualquier lugar
+
+vamos aqui https://hub.docker.com/_/postgres
+
+en este archivo tenia un error
+    application.properties
+        el purto decia 
+            server.port=8080
 
 
+#########################
+
+TABLE PLUS
+
+creamos nuevo > new postgresSQL
+    ingresamos todos los datos de la BD que hicimos en .ENV
+    es la ruta 127.0.0.1
+    port es el mismo que usameo en el YML = 5432
+    nombre = el que quieramos
+    Darle a Test pero no jalo porque l doker no jalo en un inicio
 
 ###############
 // 06:40:14
@@ -45,3 +76,5 @@ hatsa aqui ya todo sirve, ahora necesitamos de docker para quese pueda consumir 
 // 06:58:24
 
 //07:04:23
+
+//07:13:33
