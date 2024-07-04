@@ -64,6 +64,7 @@ creamos nuevo > new postgresSQL
     port es el mismo que usameo en el YML = 5432
     nombre = el que quieramos
     Darle a Test pero no jalo porque l doker no jalo en un inicio
+    ya jalo porque el volumen tenia yo mal faltaba codigo
 
 ###############
 // 06:40:14

@@ -1,17 +1,20 @@
-# Use postgres/example user/password credentials
 version: '3.9'
 
 services:
-
-  casa:
-    image: postgres
-    restart: always    
-
+  postgres:
+    image: postgres:latest
+    restart: always
     environment:
-      POSTGRESS_USER: ${SPRING_DATASOURCE_USARNAME}
-      POSTGRESS_PASWORD: ${SPRING_DATASOURCE_PASSWORD}
-      POSTGRESS_DB: ${SPRING_DATASOURCE_DB}
+      #POSTGRES_USER: ${SPRING_DATASOURCE_USERNAME}
+      #POSTGRES_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+      #POSTGRES_DB: ${SPRING_DATASOURCE_DB}
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: contraseña
+      POSTGRES_DB: basedatos
     ports:
-      - 5432:5432
-    volumes:      
-      /var/lib/postgresql/data
+      - "5432:5432"
+    volumes:
+      - postgres:/var/lib/postgesql/data
+
+volumes:
+  postgres:
