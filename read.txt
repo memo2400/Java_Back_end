@@ -66,6 +66,43 @@ creamos nuevo > new postgresSQL
     Darle a Test pero no jalo porque l doker no jalo en un inicio
     ya jalo porque el volumen tenia yo mal faltaba codigo
 
+le damos en Test y luego conectar y full HD ya jalo
+
+
+#####################
+
+vamos al java princial y damps a run
+o play
+
+error
+    Description:
+
+    Failed to configure a DataSource: no embedded datasource could be configured.
+    Reason: Failed to determine a suitable driver class
+
+    en el entorno vitual tenia este error "jdbc." y era "jdbc:"
+     otro error era "postgressql" en ligar de "postgresql"
+        SPRING_DATASOURCE_URL= jdbc.postgressql://localhost:5432/nombreaelegir
+##################
+
+postman
+
+cremao nueva conexion con el puertos
+http://localhost:8080/productos
+
+usamo el POST
+    body
+    raw
+    JSON
+
+    escribo
+    {
+    "nombre": "Grafica",
+    "precio": 100.50
+    }   
+
+error no funciona el envio
+
 ###############
 // 06:40:14
 
@@ -79,3 +116,5 @@ creamos nuevo > new postgresSQL
 //07:04:23
 
 //07:13:33
+
+//07:16:22

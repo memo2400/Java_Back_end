@@ -68,7 +68,7 @@ import org.springframework.web.bind.annotation.PathVariable;
      */
     @PostMapping
     public Producto crearProducto(@RequestBody Producto producto) {
-        //TODO: process POST request
+        // TODO: process POST request
         // guardamos el producto que recibimos en el parametro
         
         return productoRepository.save(producto);
@@ -87,7 +87,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
      @PutMapping("/{id}")
      public Producto updateProducto(@PathVariable Long id, @RequestBody Producto detallesProducto) {
-         //TODO: process PUT request
+        //TODO: process PUT request
          
          Producto productoo = productoRepository.findById(id)
         .orElseThrow(() -> new RuntimeException ("No encontramos el prducto de ID " + id));
