@@ -1,13 +1,31 @@
+
+archivo POM
+
+https://mvnrepository.com/
+    alli podemos buscar mas cosas de maven
+        Dotenv Java
+        3.0
+        agregamos su html
+            <!-- https://mvnrepository.com/artifact/io.github.cdimascio/dotenv-java -->
+            <dependency>
+                <groupId>io.github.cdimascio</groupId>
+                <artifactId>dotenv-java</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+
+###########################################
+
 aplication.propeties
 
 // aqui vamos a setear cosas para mapeada con BD
+// variables de entorno
 vamos a autogenerar la BD
 spring.jpa.hibernate.ddl-auto=update
 
 el puerto
 server.port=8080
 
-es opcional para que no se buguee, 
+es opcional para que no se buguee, cone sto importamos lods datos del archivo secreto ENV
 spring.config.import=optional:file:.env[.properties]
 
 // esto se usa asi para que no quede vulnerable las pass y user, 
