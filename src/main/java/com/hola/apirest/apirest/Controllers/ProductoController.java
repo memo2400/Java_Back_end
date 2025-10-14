@@ -27,9 +27,9 @@ import org.springframework.web.bind.annotation.PathVariable;
  * Aqui se tiene la logica del negocio, aqui se 
  * devuleve informacion o se devuleve ya procesada
  * 
- * estructura back nd que da las urls
+ * estructura back end que da las urls
  * 
- * /productos, se ira a la nuestra BD, donde estaran
+ *  /productos, se ira a la nuestra BD, donde estaran
  * los productos
  */
 
@@ -38,12 +38,16 @@ import org.springframework.web.bind.annotation.PathVariable;
  public class ProductoController {
 
     // hace una instancia del los repos de forma automatica
+    // con una sola linea queda todo
     // para ahorrar codigo
+    // tal vez el "_" causa error
     @Autowired
     private Producto_Repository productoRepository;
 
 
-    // List sale de java.util
+    
+    // El JPA nos devuelve todo, todos los productos
+    // se consume facil la BD con .findAll()
     @GetMapping
     public List<Producto> getAllProducts(){
         return productoRepository.findAll();
@@ -123,10 +127,11 @@ import org.springframework.web.bind.annotation.PathVariable;
  * http nos manda datos entrre cosas, es el protocolo en que se envia
  *  get = recibe cosas de un server
  *  post = crear un nuevo recursos
- *  put actualizar o reemplazar versiona anterior
- *  patch actualizar una parte del producto
- *  delete = para borrar
+ *  put = actualizar o reemplazar versiona anterior
+ *  patch = actualizar una parte del producto
+ *  delete = para borrar el recurso
  * 
  * 
- * Rest brinda los datos en JSON  (api rest = forma en la que trabaja el envio de la informacion)
+ * REST brinda los datos en JSON  (api rest = forma en la que trabaja el envio de la informacion)
+ * se usa el JSON porque es muy rapido para mandar cosas
  */
