@@ -1,10 +1,18 @@
+package com.hola.apirest.apirest.Entities;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 /*
- * este sera nuestro nuevo primer crud
+ * Son los objetos que represnetan , y encapsulan 
+ * datos y comportamientos , de los objetos, que
+ * depues seran mapeados con la base de datos 
  * 
+ * este sera nuestro nuevo primer crud
  * que es crear leer, actualizar y borrar 
  */
-package com.hola.apirest.apirest.Entities;
 
 //import jakarta.annotation.Generated;
 
@@ -12,19 +20,12 @@ package com.hola.apirest.apirest.Entities;
  * con esto , java sabra que esto es una entidad
  * son los decoradores, de spring
  */
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
 @Entity
-
 public class Producto {
 
     /*
      * Este ID sera unicoo para cada producto 
-     * y se ra ascendente , automatico
+     * y sera ascendente , automatico
      */
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -56,8 +57,5 @@ public class Producto {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-
-    
-
 
 }

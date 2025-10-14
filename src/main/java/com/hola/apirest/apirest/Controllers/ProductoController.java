@@ -24,7 +24,10 @@ import org.springframework.web.bind.annotation.PathVariable;
  * Pondremos tosas las direcciones
  * para que nuestros clientes consuman datos
  * 
- * estructura back end que da las urls
+ * Aqui se tiene la logica del negocio, aqui se 
+ * devuleve informacion o se devuleve ya procesada
+ * 
+ * estructura back nd que da las urls
  * 
  * /productos, se ira a la nuestra BD, donde estaran
  * los productos

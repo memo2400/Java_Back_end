@@ -8,9 +8,12 @@ import com.hola.apirest.apirest.Entities.Producto;
 /*
  * tenemos nuestra interface crada, en ligar de clase
  * 
- * < aqui ponemos el tipo de entidad, el tipo variable>
+ * El repositorio es para poder interactuar con la
+ * base de datos, borrar , escribir, y actualizar, 
+ * es la persistencia
  */
 
+ //                 <tipo de entidad, tipo variable>
  public interface Producto_Repository extends JpaRepository <Producto, Long> {
 
 }
