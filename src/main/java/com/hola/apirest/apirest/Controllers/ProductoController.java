@@ -75,9 +75,8 @@ import org.springframework.web.bind.annotation.PathVariable;
      */
     @PostMapping
     public Producto crearProducto(@RequestBody Producto producto) {
-        // TODO: process POST request
-        // guardamos el producto que recibimos en el parametro
         
+        // guardamos el producto que recibimos en el parametro        
         return productoRepository.save(producto);
     }
     
