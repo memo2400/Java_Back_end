@@ -57,6 +57,8 @@ con alt = seleciono varioa renglones, y pego todos multiples
 
 abrimos Duker y la terminal 
     escribo: $ docker-compose up -d
+    Para linux, quito el gui para usar el docker nuevo que no depende de python
+    escribo: $ sudo docker compose up -d
     hubo un error porque tenia enviroment mal escrito
     con eso vamos a ducker y ya esta jalando al 100%
 
